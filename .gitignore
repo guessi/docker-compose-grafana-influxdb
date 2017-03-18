@@ -1,0 +1,5 @@
+*.db
+*.log
+**/sessions/
+influxdb/var/lib/data/*
+influxdb/var/lib/wal
