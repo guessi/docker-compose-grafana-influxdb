@@ -2,7 +2,7 @@ version: "2"
 
 services:
     influxdb:
-        image: influxdb:1.2.2
+        image: influxdb:1.2.4
         volumes:
             - ./influxdb/var/lib:/var/lib/influxdb
         ports:

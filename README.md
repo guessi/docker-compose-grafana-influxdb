@@ -15,7 +15,7 @@
 ### Docker Images
 
 - [Grafana v4.3.2][docker-image-grafana]
-- [InfluxDB 1.2.2][docker-image-influxdb]
+- [InfluxDB 1.2.4][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
