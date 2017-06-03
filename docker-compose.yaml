@@ -8,6 +8,7 @@ services:
         ports:
             - 8083:8083
             - 8086:8086
+        privileged: true
 
     grafana:
         image: grafana/grafana:4.3.2
@@ -18,3 +19,4 @@ services:
             - ./grafana/var/log:/var/log/grafana
         ports:
             - 3000:3000
+        privileged: true
