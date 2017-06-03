@@ -10,7 +10,7 @@ services:
             - 8086:8086
 
     grafana:
-        image: grafana/grafana:4.2.0
+        image: grafana/grafana:4.3.2
         volumes:
             - ./grafana/etc:/etc/grafana
             - ./grafana/var/lib:/var/lib/grafana
