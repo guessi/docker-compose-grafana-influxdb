@@ -17,6 +17,8 @@ services:
             - ./grafana/var/lib:/var/lib/grafana
             - ./grafana/var/lib/plugins:/var/lib/grafana/plugins
             - ./grafana/var/log:/var/log/grafana
+        environment:
+            - GF_INSTALL_PLUGINS=grafana-clock-panel
         ports:
             - 3000:3000
         privileged: true
