@@ -2,10 +2,12 @@
 
 ### Prerequisites
 
-- Docker Engine v1.12.6 (or newer)
-- Docker Compose v1.13.0 (or newer)
+- Docker Engine v1.12.6+
+- Docker Compose v1.13.0+
 
 ### Usage
+
+    $ docker-compose pull
 
     $ docker-compose up
 
