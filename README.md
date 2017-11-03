@@ -13,6 +13,29 @@
 
     $ firefox http://localhost:3000
 
+### FAQ
+
+Why is that influxDB datasource doesn't work?
+
+    manual create database is still required
+
+    $ docker exec -it dockercomposegrafanainfluxdb_influxdb_1 influx
+    Connected to http://localhost:8086 version 1.3.7
+    InfluxDB shell version: 1.3.7
+    > show databases
+    name: databases
+    name
+    ----
+    _internal
+    >
+    > create database influx
+    >
+    > show databases
+    name: databases
+    name
+    ----
+    _internal
+    influx
 
 ### Docker Images
 
