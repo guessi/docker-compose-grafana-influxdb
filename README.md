@@ -20,8 +20,8 @@ Why is that influxDB datasource doesn't work?
     manual create database is still required
 
     $ docker exec -it dockercomposegrafanainfluxdb_influxdb_1 influx
-    Connected to http://localhost:8086 version 1.3.7
-    InfluxDB shell version: 1.3.7
+    Connected to http://localhost:8086 version 1.3.8
+    InfluxDB shell version: 1.3.8
     > show databases
     name: databases
     name
@@ -39,8 +39,8 @@ Why is that influxDB datasource doesn't work?
 
 ### Docker Images
 
-- [Grafana v4.6.1][docker-image-grafana]
-- [InfluxDB 1.3.7][docker-image-influxdb]
+- [Grafana v4.6.3][docker-image-grafana]
+- [InfluxDB 1.3.8][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/

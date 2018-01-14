@@ -2,7 +2,7 @@ version: "2.1"
 
 services:
     influxdb:
-        image: influxdb:1.3.7-alpine
+        image: influxdb:1.3.8-alpine
         volumes:
             - ./influxdb/var/lib:/var/lib/influxdb
         ports:
@@ -11,7 +11,7 @@ services:
         privileged: true
 
     grafana:
-        image: grafana/grafana:4.6.1
+        image: grafana/grafana:4.6.3
         volumes:
             - ./grafana/etc:/etc/grafana
             - ./grafana/var/lib:/var/lib/grafana
