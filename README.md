@@ -15,27 +15,28 @@
 
 ### FAQ
 
-Why is that influxDB datasource doesn't work?
+#### Why is that influxDB datasource doesn't work?
 
-    manual create database is still required
+manual create database is still required
 
-    $ docker exec -it dockercomposegrafanainfluxdb_influxdb_1 influx
-    Connected to http://localhost:8086 version 1.3.8
-    InfluxDB shell version: 1.3.8
-    > show databases
-    name: databases
-    name
-    ----
-    _internal
-    >
-    > create database influx
-    >
-    > show databases
-    name: databases
-    name
-    ----
-    _internal
-    influx
+```bash
+$ docker exec -it demo_influxdb_1                                             \
+    influx                                                                    \
+      -version
+
+$ docker exec -it demo_influxdb_1                                             \
+    influx                                                                    \
+      -username root                                                          \
+      -password 5up3rS3cr3t                                                   \
+      -execute 'CREATE DATABASE demo;'
+
+$ docker exec -it demo_influxdb_1                                             \
+    influx                                                                    \
+      -username root                                                          \
+      -password 5up3rS3cr3t                                                   \
+      -execute 'SHOW DATABASES;'
+```
+
 
 ### Docker Images
 
