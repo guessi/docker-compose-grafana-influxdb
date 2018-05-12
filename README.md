@@ -2,8 +2,8 @@
 
 ### Prerequisites
 
-- Docker-CE 17.06+
-- Docker Compose v1.18.0+
+- Docker-CE 17.12+
+- Docker Compose v1.21.0+
 
 ### Usage
 
@@ -11,19 +11,23 @@
 
     $ docker-compose up
 
-    $ firefox http://localhost:3000
+    $ open http://localhost:3000
 
 ### FAQ
 
-#### Why is that influxDB datasource doesn't work?
-
-manual create database is still required
+#### [InfluxDB] How do I check running InfluxDB's version?
 
 ```bash
 $ docker exec -it demo_influxdb_1                                             \
     influx                                                                    \
       -version
+```
 
+#### [Grafana] Why is InfluxDB datasource doesn't work?
+
+manual create database is still required
+
+```bash
 $ docker exec -it demo_influxdb_1                                             \
     influx                                                                    \
       -username root                                                          \
@@ -40,8 +44,8 @@ $ docker exec -it demo_influxdb_1                                             \
 
 ### Docker Images
 
-- [Grafana v4.6.3][docker-image-grafana]
-- [InfluxDB 1.3.8][docker-image-influxdb]
+- [Grafana v5.1.2][docker-image-grafana]
+- [InfluxDB 1.5.2][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
