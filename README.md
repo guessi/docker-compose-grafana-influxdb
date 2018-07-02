@@ -44,8 +44,8 @@ $ docker exec -it demo_influxdb_1                                             \
 
 ### Docker Images
 
-- [Grafana v5.1.2][docker-image-grafana]
-- [InfluxDB 1.5.2][docker-image-influxdb]
+- [Grafana v5.2.0][docker-image-grafana]
+- [InfluxDB 1.5.4][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
