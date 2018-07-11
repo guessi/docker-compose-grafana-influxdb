@@ -41,6 +41,19 @@ $ docker exec -it demo_influxdb_1                                             \
       -execute 'SHOW DATABASES;'
 ```
 
+#### [Misc] Where can I find my data?
+
+after upgrading to Grafana 5.1+, data store changed, please find your data via `$ docker volume ls`
+
+reference: [FAQ - Grafana Migration][faq-grafana-migration]
+
+```bash
+$ docker volume ls
+
+$ docker volume inspect data-influxdb-lib
+$ docker volume inspect data-grafana-lib
+$ docker volume inspect data-grafana-log
+```
 
 ### Docker Images
 
@@ -49,3 +62,4 @@ $ docker exec -it demo_influxdb_1                                             \
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
+[faq-grafana-migration]: http://docs.grafana.org/installation/docker/#migration-from-a-previous-version-of-the-docker-container-to-5-1-or-later

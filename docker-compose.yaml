@@ -4,8 +4,8 @@ services:
     influxdb:
         image: influxdb:1.5.4-alpine
         volumes:
-            - ./influxdb/var/lib:/var/lib/influxdb
             - ./influxdb/etc:/etc/influxdb
+            - influxdb-lib:/var/lib/influxdb
         environment:
             - INFLUXDB_ADMIN_USER=root
             - INFLUXDB_ADMIN_PASSWORD=5up3rS3cr3t
@@ -17,11 +17,9 @@ services:
     grafana:
         image: grafana/grafana:5.2.0
         volumes:
-            - ./grafana/etc:/etc/grafana
-            - ./grafana/var/lib:/var/lib/grafana
-            - ./grafana/var/lib/plugins:/var/lib/grafana/plugins
-            - ./grafana/var/lib/provisioning:/var/lib/grafana/provisioning
-            - ./grafana/var/log:/var/log/grafana
+            - ./grafana/etc:/etc/grafana:ro
+            - grafana-lib:/var/lib/grafana
+            - grafana-log:/var/log/grafana
         links:
             - influxdb:influxdb
         environment:
@@ -31,3 +29,16 @@ services:
         depends_on:
             - influxdb
         privileged: true
+
+volumes:
+  influxdb-lib:
+    name: data-influxdb-lib
+    external: false
+
+  grafana-lib:
+    name: data-grafana-lib
+    external: false
+
+  grafana-log:
+    name: data-grafana-log
+    external: false
