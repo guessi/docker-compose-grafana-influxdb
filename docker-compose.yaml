@@ -15,7 +15,7 @@ services:
         privileged: true
 
     grafana:
-        image: grafana/grafana:5.2.0
+        image: grafana/grafana:5.2.1
         volumes:
             - ./grafana/etc:/etc/grafana:ro
             - grafana-lib:/var/lib/grafana
