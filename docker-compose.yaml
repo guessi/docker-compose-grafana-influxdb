@@ -2,7 +2,7 @@ version: "2.4"
 
 services:
     influxdb:
-        image: influxdb:1.5.4-alpine
+        image: influxdb:1.6.0-alpine
         volumes:
             - ./influxdb/etc:/etc/influxdb
             - influxdb-lib:/var/lib/influxdb
