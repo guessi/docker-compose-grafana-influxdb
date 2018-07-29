@@ -23,9 +23,9 @@ $ docker exec -it demo_influxdb_1                                             \
       -version
 ```
 
-#### [Grafana] Why is InfluxDB datasource doesn't work?
+#### [Grafana] How do I initialized my Grafana with InfluxDB?
 
-manual create database is still required
+1. Login via http://localhost:3000, use the default user/pass: admin/admin
 
 ```bash
 $ docker exec -it demo_influxdb_1                                             \
@@ -33,13 +33,33 @@ $ docker exec -it demo_influxdb_1                                             \
       -username root                                                          \
       -password 5up3rS3cr3t                                                   \
       -execute 'CREATE DATABASE demo;'
-
-$ docker exec -it demo_influxdb_1                                             \
-    influx                                                                    \
-      -username root                                                          \
-      -password 5up3rS3cr3t                                                   \
-      -execute 'SHOW DATABASES;'
 ```
+
+2. Configure Data Source
+
+```
+[Data Source]
+- Name: MyInfluxDataSource
+- Type: InfluxDB
+
+[HTTP]
+- URL: http://demo_influxdb_1:8086
+- Access: Server (Default)
+
+[Auth]
+- With Credentials (checked)
+- other (unchecked)
+
+[InfluxDB]
+- Database: demo
+- User: root
+- Password: 5up3rS3cr3t
+```
+
+3. Update Settings
+
+Now, click "Save & Test", and now you should be able to see message prompt: `Data source is working`
+
 
 #### [Misc] Where can I find my data?
 
