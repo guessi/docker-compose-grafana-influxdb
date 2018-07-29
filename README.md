@@ -1,4 +1,4 @@
-# Grafana + InfluxDB Monitoring System
+# Grafana Monitoring System with InfluxDB
 
 ### Prerequisites
 
