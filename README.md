@@ -77,8 +77,8 @@ $ docker volume inspect data-grafana-log
 
 ### Docker Images
 
-- [Grafana v5.2.2][docker-image-grafana]
-- [InfluxDB 1.6.0][docker-image-influxdb]
+- [Grafana v5.2.4][docker-image-grafana]
+- [InfluxDB 1.6.3][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
