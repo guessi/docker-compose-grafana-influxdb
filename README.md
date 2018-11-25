@@ -2,8 +2,8 @@
 
 ### Prerequisites
 
-- Docker-CE 17.12+
-- Docker Compose v1.21.0+
+- Docker-CE 18.06+
+- Docker Compose v1.23.1+
 
 ### Usage
 
@@ -18,9 +18,7 @@
 #### [InfluxDB] How do I check running InfluxDB's version?
 
 ```bash
-$ docker exec -it demo_influxdb_1                                             \
-    influx                                                                    \
-      -version
+$ docker exec -it influxdb influx -version
 ```
 
 #### [Grafana] How do I initialized my Grafana with InfluxDB?
@@ -28,10 +26,10 @@ $ docker exec -it demo_influxdb_1                                             \
 1. Login via http://localhost:3000, use the default user/pass: admin/admin
 
 ```bash
-$ docker exec -it demo_influxdb_1                                             \
-    influx                                                                    \
-      -username root                                                          \
-      -password 5up3rS3cr3t                                                   \
+$ docker exec -it influxdb             \
+    influx                             \
+      -username root                   \
+      -password 5up3rS3cr3t            \
       -execute 'CREATE DATABASE demo;'
 ```
 
@@ -43,7 +41,7 @@ $ docker exec -it demo_influxdb_1                                             \
 - Type: InfluxDB
 
 [HTTP]
-- URL: http://demo_influxdb_1:8086
+- URL: http://influxdb:8086
 - Access: Server (Default)
 
 [Auth]
@@ -70,9 +68,10 @@ reference: [FAQ - Grafana Migration][faq-grafana-migration]
 ```bash
 $ docker volume ls
 
-$ docker volume inspect data-influxdb-lib
-$ docker volume inspect data-grafana-lib
-$ docker volume inspect data-grafana-log
+DRIVER          VOLUME NAME
+local           demo_grafana-lib
+local           demo_grafana-log
+local           demo_influxdb-lib
 ```
 
 ### Docker Images

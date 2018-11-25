@@ -1,7 +1,8 @@
-version: "2.4"
+version: "3"
 
 services:
     influxdb:
+        container_name: influxdb
         image: influxdb:1.7.1-alpine
         volumes:
             - ./influxdb/etc:/etc/influxdb
@@ -15,6 +16,7 @@ services:
         privileged: true
 
     grafana:
+        container_name: grafana
         image: grafana/grafana:5.3.2
         volumes:
             - ./grafana/etc:/etc/grafana:ro
@@ -32,13 +34,10 @@ services:
 
 volumes:
   influxdb-lib:
-    name: data-influxdb-lib
     external: false
 
   grafana-lib:
-    name: data-grafana-lib
     external: false
 
   grafana-log:
-    name: data-grafana-log
     external: false
