@@ -2,7 +2,7 @@ version: "2.4"
 
 services:
     influxdb:
-        image: influxdb:1.6.3-alpine
+        image: influxdb:1.7.1-alpine
         volumes:
             - ./influxdb/etc:/etc/influxdb
             - influxdb-lib:/var/lib/influxdb
@@ -15,7 +15,7 @@ services:
         privileged: true
 
     grafana:
-        image: grafana/grafana:5.2.4
+        image: grafana/grafana:5.3.2
         volumes:
             - ./grafana/etc:/etc/grafana:ro
             - grafana-lib:/var/lib/grafana
