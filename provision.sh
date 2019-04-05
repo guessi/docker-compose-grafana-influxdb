@@ -3,9 +3,14 @@
 set -o errexit
 set -o nounset
 
-INFLUXDB_ROOT_USERNAME="root"
-INFLUXDB_ROOT_PASSWORD="5up3rS3cr3t" # supersecret
-INFLUXDB_DEMO_DATABASE="demo"
+source demo.env
+
+echo "==> Prepare Configurations"
+sed -e 's/%%INFLUXDB_ADMIN_USER%%/'${INFLUXDB_ADMIN_USER}'/g'         \
+    -e 's/%%INFLUXDB_ADMIN_PASSWORD%%/'${INFLUXDB_ADMIN_PASSWORD}'/g' \
+    -e 's/%%INFLUXDB_DEMO_DATABASE%%/'${INFLUXDB_DEMO_DATABASE}'/g'   \
+    grafana/etc/provisioning/datasources/datasource.yaml.template     \
+  > grafana/etc/provisioning/datasources/datasource.yaml
 
 echo "==> Docker Image Pull"
 docker-compose pull
@@ -19,10 +24,10 @@ echo "==> Waiting for Services Ready"
 sleep 60
 
 echo "==> Initial Database"
-docker exec -it influxdb                \
-  influx                                \
-    -username ${INFLUXDB_ROOT_USERNAME} \
-    -password ${INFLUXDB_ROOT_PASSWORD} \
+docker exec -it influxdb                 \
+  influx                                 \
+    -username ${INFLUXDB_ADMIN_USER}     \
+    -password ${INFLUXDB_ADMIN_PASSWORD} \
     -execute 'CREATE DATABASE '${INFLUXDB_DEMO_DATABASE}';'
 
 echo "==> Done"
