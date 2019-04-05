@@ -76,8 +76,8 @@ local           demo_influxdb-lib
 
 ### Docker Images
 
-- [Grafana v5.3.2][docker-image-grafana]
-- [InfluxDB 1.7.1][docker-image-influxdb]
+- [Grafana v6.1.0][docker-image-grafana]
+- [InfluxDB 1.7.5][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/

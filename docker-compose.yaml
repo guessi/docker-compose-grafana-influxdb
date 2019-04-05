@@ -3,7 +3,7 @@ version: "3"
 services:
     influxdb:
         container_name: influxdb
-        image: influxdb:1.7.1-alpine
+        image: influxdb:1.7.5-alpine
         volumes:
             - ./influxdb/etc:/etc/influxdb
             - influxdb-lib:/var/lib/influxdb
@@ -17,7 +17,7 @@ services:
 
     grafana:
         container_name: grafana
-        image: grafana/grafana:5.3.2
+        image: grafana/grafana:6.1.0
         volumes:
             - ./grafana/etc:/etc/grafana:ro
             - grafana-lib:/var/lib/grafana
