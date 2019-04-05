@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    access: proxy
+    database: demo
+    user: root
+    password: 5up3rS3cr3t
+    url: http://influxdb:8086

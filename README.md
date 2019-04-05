@@ -1,69 +1,28 @@
 # Grafana Monitoring System with InfluxDB
 
+### Disclaimer
+
+This is demonstration scripts for running Grafana with InfluxDB as datasource.
+Please **DO NOT** use it in production.
+
 ### Prerequisites
 
 - Docker-CE 18.06+
 - Docker Compose v1.23.1+
 
-### Usage
+### Quick Start Guide
 
-    $ docker-compose pull
+```bash
+$ ./provision.sh
+```
 
-    $ docker-compose up -d
-
-    $ open http://localhost:3000
+That's all, now you should be able to check your dashboard by visiting http://localhost:3000 :-)
 
 ### FAQ
 
-#### [InfluxDB] How do I check running InfluxDB's version?
+#### Where can I find my data?
 
-```bash
-$ docker exec -it influxdb influx -version
-```
-
-#### [Grafana] How do I initialized my Grafana with InfluxDB?
-
-1. Login via http://localhost:3000, use the default user/pass: admin/admin
-
-```bash
-$ docker exec -it influxdb             \
-    influx                             \
-      -username root                   \
-      -password 5up3rS3cr3t            \
-      -execute 'CREATE DATABASE demo;'
-```
-
-2. Configure Data Source
-
-```
-[Data Source]
-- Name: MyInfluxDataSource
-- Type: InfluxDB
-
-[HTTP]
-- URL: http://influxdb:8086
-- Access: Server (Default)
-
-[Auth]
-- With Credentials (checked)
-- other (unchecked)
-
-[InfluxDB]
-- Database: demo
-- User: root
-- Password: 5up3rS3cr3t
-```
-
-3. Update Settings
-
-Now, click "Save & Test", and now you should be able to see message prompt: `Data source is working`
-
-
-#### [Misc] Where can I find my data?
-
-after upgrading to Grafana 5.1+, data store changed, please find your data via `$ docker volume ls`
-
-reference: [FAQ - Grafana Migration][faq-grafana-migration]
+please find your data via `$ docker volume ls`
 
 ```bash
 $ docker volume ls
@@ -72,6 +31,14 @@ DRIVER          VOLUME NAME
 local           demo_grafana-lib
 local           demo_grafana-log
 local           demo_influxdb-lib
+```
+
+#### I just messed up, how do I start over again?
+
+I know you will ask, here's the cleanup script for you :-)
+
+```bash
+$ ./cleanup.sh
 ```
 
 ### Docker Images
