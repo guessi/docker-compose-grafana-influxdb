@@ -32,4 +32,7 @@ docker exec -it influxdb                 \
 
 echo "==> Done"
 
-echo "==> Next Step: Setup your dashboard by visiting http://localhost:3000"
+echo "==> Next Step:"
+echo "    Setup your dashboard by visiting http://localhost:3000"
+echo "==> Default Username: admin"
+echo "==> Default Password: admin"
