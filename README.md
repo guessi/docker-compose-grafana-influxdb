@@ -44,7 +44,7 @@ $ ./cleanup.sh
 ### Docker Images
 
 - [Grafana v6.4.2][docker-image-grafana]
-- [InfluxDB 1.7.7][docker-image-influxdb]
+- [InfluxDB 1.7.8][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
