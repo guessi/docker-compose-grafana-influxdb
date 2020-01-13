@@ -16,7 +16,7 @@ services:
 
     grafana:
         container_name: grafana
-        image: grafana/grafana:6.5.1
+        image: grafana/grafana:6.5.2
         volumes:
             - ./grafana/etc:/etc/grafana:ro
             - grafana-lib:/var/lib/grafana
