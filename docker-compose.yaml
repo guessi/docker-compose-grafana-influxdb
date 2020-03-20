@@ -24,7 +24,7 @@ services:
         links:
             - influxdb:influxdb
         env_file:
-            - ./demo.env
+            - ./demo.env # BE SURE TO CHANGE THIS LINE BEFORE GOING TO PRODUCTION
         ports:
             - 3000:3000
         depends_on:

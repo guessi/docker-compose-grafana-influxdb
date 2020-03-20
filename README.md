@@ -3,7 +3,8 @@
 ### Disclaimer
 
 This is demonstration scripts for running Grafana with InfluxDB as datasource.
-Please **DO NOT** use it in production.
+
+**Please be sure to check all the env files before running this setup on Production environment.**
 
 ### Prerequisites
 
