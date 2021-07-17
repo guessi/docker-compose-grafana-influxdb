@@ -1,35 +1,37 @@
-version: "3"
+version: "3.7"
 
 services:
-    influxdb:
-        container_name: influxdb
-        image: influxdb:1.8.5-alpine
-        volumes:
-            - ./influxdb/etc:/etc/influxdb
-            - influxdb-lib:/var/lib/influxdb
-        env_file:
-            - ./demo.env
-        ports:
-            - 8083:8083
-            - 8086:8086
-        privileged: true
+  influxdb:
+    container_name: influxdb
+    image: influxdb:2.0.7-alpine
+    volumes:
+      - influxdb-lib:/var/lib/influxdb2
+    env_file:
+      # BE SURE TO CHANGE THIS LINE BEFORE GOING TO PRODUCTION
+      - ./influx2.env
+    ports:
+      - 8086:8086
+    restart: always
+    privileged: true
 
-    grafana:
-        container_name: grafana
-        image: grafana/grafana:8.0.6
-        volumes:
-            - ./grafana/etc:/etc/grafana:ro
-            - grafana-lib:/var/lib/grafana
-            - grafana-log:/var/log/grafana
-        links:
-            - influxdb:influxdb
-        env_file:
-            - ./demo.env # BE SURE TO CHANGE THIS LINE BEFORE GOING TO PRODUCTION
-        ports:
-            - 3000:3000
-        depends_on:
-            - influxdb
-        privileged: true
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:8.0.6
+    volumes:
+      - ./grafana/etc:/etc/grafana:ro
+      - grafana-lib:/var/lib/grafana
+      - grafana-log:/var/log/grafana
+    links:
+      - influxdb:influxdb
+    env_file:
+      # BE SURE TO CHANGE THIS LINE BEFORE GOING TO PRODUCTION
+      - ./grafana.env
+    ports:
+      - 3000:3000
+    depends_on:
+      - influxdb
+    restart: always
+    privileged: true
 
 volumes:
   influxdb-lib:

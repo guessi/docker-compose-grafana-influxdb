@@ -8,44 +8,29 @@ This is demonstration scripts for running Grafana with InfluxDB as datasource.
 
 ### Prerequisites
 
-- Docker-CE 18.06+
-- Docker Compose v1.23.1+
+- Docker-CE 19.03+
+- Docker Compose v1.25.1+
 
 ### Quick Start Guide
 
 ```bash
-$ ./provision.sh
+./provision.sh
 ```
 
 That's all, now you should be able to check your dashboard by visiting http://localhost:3000 :-)
 
 ### FAQ
 
-#### Where can I find my data?
-
-please find your data via `$ docker volume ls`
-
-```bash
-$ docker volume ls
-
-DRIVER          VOLUME NAME
-local           demo_grafana-lib
-local           demo_grafana-log
-local           demo_influxdb-lib
-```
-
 #### I just messed up, how do I start over again?
 
-I know you will ask, here's the cleanup script for you :-)
-
 ```bash
-$ ./cleanup.sh
+./cleanup.sh
 ```
 
 ### Docker Images
 
 - [Grafana v8.0.6][docker-image-grafana]
-- [InfluxDB 1.8.5][docker-image-influxdb]
+- [InfluxDB 2.0.7][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/
