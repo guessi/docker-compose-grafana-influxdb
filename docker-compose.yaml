@@ -3,7 +3,7 @@ version: "3.7"
 services:
   influxdb:
     container_name: influxdb
-    image: influxdb:2.0.9-alpine
+    image: influxdb:2.1.1-alpine
     volumes:
       - influxdb-lib:/var/lib/influxdb2
     env_file:
