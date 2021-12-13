@@ -9,7 +9,7 @@ This is demonstration scripts for running Grafana with InfluxDB as datasource.
 ### Prerequisites
 
 - Docker-CE 19.03+
-- Docker Compose v1.25.1+
+- Docker Compose v1.29.2+
 
 ### Quick Start Guide
 

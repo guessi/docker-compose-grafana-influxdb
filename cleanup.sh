@@ -3,8 +3,8 @@
 echo "[info] checking container(s) running state"
 echo
 
-if docker-compose ls | grep "running" >/dev/null; then
-  docker-compose ls
+if docker compose ls | grep "running" >/dev/null; then
+  docker compose ls
 else
   echo "* skipped, no container running"
   exit 0
@@ -27,11 +27,11 @@ if [ "${YES_OR_NO}" = "yes" ]; then
       | grep -v 'external:' \
       | grep -v '^--$' \
       | sed 's/[ :]//g' \
-      | xargs docker-compose down --volumes
+      | xargs docker compose down --volumes
   else
     echo "[info] shutting down containers defined in docker-compose.yaml (volumes excluded)"
     echo
-    docker-compose down
+    docker compose down
   fi
 else
   echo "* skipped, nothing happen"
