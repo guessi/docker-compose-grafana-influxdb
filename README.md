@@ -29,7 +29,7 @@ That's all, now you should be able to check your dashboard by visiting http://lo
 
 ### Docker Images
 
-- [Grafana v8.4.2][docker-image-grafana]
+- [Grafana v8.4.3][docker-image-grafana]
 - [InfluxDB 2.1.1][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
