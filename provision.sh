@@ -13,7 +13,7 @@ sed -e 's/%%INFLUXDB_INIT_ORG%%/'${DOCKER_INFLUXDB_INIT_ORG}'/g' \
   > grafana/etc/provisioning/datasources/datasource.yaml
 
 echo "==> Docker Image Pull"
-docker compose pull
+docker-compose pull
 
 echo "==> Bring Up Services"
-docker compose up -d
+docker-compose up -d
