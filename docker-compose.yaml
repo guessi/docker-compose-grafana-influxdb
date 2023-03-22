@@ -20,6 +20,7 @@ services:
     volumes:
       # Note: The 'ro' option specifies that the volume is mounted in read-only mode.
       # However, certain files such as grafana.ini may require write access. Be mindful of security implications when removing ':ro'.
+      # Docs : https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3
       - ./grafana/etc:/etc/grafana:ro
       - grafana-lib:/var/lib/grafana
       - grafana-log:/var/log/grafana
