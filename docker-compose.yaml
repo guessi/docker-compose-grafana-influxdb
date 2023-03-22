@@ -21,6 +21,7 @@ services:
       - ./grafana/etc:/etc/grafana:ro
       - grafana-lib:/var/lib/grafana
       - grafana-log:/var/log/grafana
+      - ./grafana/etc/grafana.ini:/etc/grafana/grafana.ini
     links:
       - influxdb:influxdb
     env_file:
