@@ -8,7 +8,7 @@ This is demonstration scripts for running Grafana with InfluxDB as datasource.
 
 ### Prerequisites
 
-- Docker Engine 20.10+
+- Docker 25.0+
 
 ### Quick Start Guide
 
